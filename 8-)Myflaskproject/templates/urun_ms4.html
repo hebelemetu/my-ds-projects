@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+    <style type="text/css">
+        table, th, td {
+          padding: 5px;
+        }
+        a{
+         text-decoration:none;
+        }
+    </style>
+      <body style="padding:0px; margin:0px; font-family:Trebuchet MS;">
+      <div style="background-color:#4c208e; padding:20px;">
+
+         <table style="width:100%;" >
+            <tr>
+               <td width="50%">
+                  <b style="color:white; font-size:28px; font-weight:bold;">FOOD LIST</b>
+               </td>
+               <td width="10%">
+                  <a href="/" style="color:white;font-weight:bold;">HOME</a>
+               </td>
+            </tr>
+         </table>
+
+      </div>
+        <table style="border:1px solid black; width:85%">
+            <tr>
+        <td style="width:40%;"><a><b>SHORT DESCRIPTION</b></a></td>
+        <td style="width:15%;"><a><b style="font-size:15px;">NITROGEN FACTOR</b></a></td>
+        <td style="width:15%;"><a><b style="font-size:15px;">PROTEIN FACTOR</b></a></td>
+        <td style="width:15%;"><a><b style="font-size:15px;">FAT FACTOR</b></a></td>
+        <td style="width:15%;"><a><b style="font-size:15px;">CALORIE FACTOR</b></a></td>
+    </tr></table><table style="width:85%;">
+    {% for row in cur.execute("SELECT * from food where food_group_id=?", [urunid]).fetchall()%}
+            <tr>
+        <td style="width:40%;"><a href="{{ url_for('form',id=row['food_group_id'],id2=row['id']) }}">{{row['short_desc']}}</a></td>
+        <td style="width:15%;"><a>{{row['nitrogen_factor']}}</a></td>
+        <td style="width:15%;"><a>{{row['protein_factor']}}</a></td>
+        <td style="width:15%;"><a>{{row['fat_factor']}}</a></td>
+        <td style="width:15%;"><a>{{row['calorie_factor']}}</a></td>
+    </tr>
+    {% endfor %}
+        </table>
+   </body>
+</html>

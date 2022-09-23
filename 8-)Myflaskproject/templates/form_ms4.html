@@ -1,0 +1,85 @@
+
+<!doctype html>
+<html>
+    <style type="text/css">
+        table, th, td {
+          padding: 5px;
+          vertical-align: top;
+
+        }
+        table {
+          border-collapse: collapse;
+        }
+        body{
+            padding-left:5%;
+        }
+                a{
+         text-decoration:none;
+        }
+    </style>
+<body style="padding:0px; margin:0px; font-family:Trebuchet MS;">
+      <div style="background-color:#4c208e; padding:20px;">
+         <table style="width:100%;">
+            <tr>
+               <td width="50%">
+                  <b style="color:white; font-size:28px; font-weight:bold;">FOOD LIST</b>
+               </td>
+               <td width="10%">
+                  <a href="/" style="color:white;font-weight:bold;">HOME</a>
+               </td>
+            </tr>
+         </table>
+
+      </div>
+           <table style="border:1px solid black; width:95%;">
+            <tr>
+                 <td style="width:30%;">
+                     <h3>Food Property Form</h3>
+                    <form action = "" method = "POST">
+                     <input type = "hidden" name = "urunid" value="{{id2}}" />
+                     <p>Food Group <input type = "text" name = "Food Group" value="{{id}}"/></p>
+                     <p>Short Description <input type = "text" name = "Short Description" value="{{sd_1}}"/></p>
+                     <p>Long Description <input type = "text" name = "Long Description" value="{{ld}}"/></p>
+                     <p>Manufacturer <input type ="text" name = "Manufacturer" value="{{mn}}"/></p>
+                     <p>Scientific Name <input type ="text" name = "Scientific Name" value="{{sn}}"/></p>
+                     <p><input type = "submit" value = "UPDATE" /></p>
+                  </form>
+                 </td>
+                 <td style="width:35%;">
+                     <h3>Nutrition Table</h3>
+                <table style="width:70%;">
+               <tr>
+                 <td style="border:1px solid black;width:25%;"><a><b style="font-size:15px;">AMOUNT</b></a></td>
+                 <td style="border:1px solid black;width:25%;"><a><b style="font-size:15px;">NUM DATA POINTS</b></a></td>
+               </tr>
+       {% for row in cur.execute("SELECT * from nutrition where food_id=?", [id2]).fetchall()%}
+               <tr>
+           <td style="border:1px solid black;width:25%;"><a>{{row['amount']}}</a></td>
+           <td style="border:1px solid black;width:25%;"><a>{{row['num_data_points']}}</a></td>
+               </tr>
+       {% endfor %}
+        </table>
+                 </td>
+                 <td style="width:35%;">
+                    <h3>Weight Table</h3>
+              <table style=" width:70%;">
+            <tr>
+        <td style="border:1px solid black;width:25%;"><a><b style="font-size:15px;">AMOUNT</b></a></td>
+        <td style="border:1px solid black;width:25%;"><a><b style="font-size:15px;">DESCRIPTION</b></a></td>
+        <td style="border:1px solid black;width:25%;"><a><b style="font-size:15px">GM WEIGHT</b></a></td>
+            </tr>
+    {% for row in cur.execute("SELECT * from weight where food_id=?", [id2]).fetchall()%}
+            <tr>
+        <td style="border:1px solid black;width:25%;"><a>{{row['amount']}}</a></td>
+        <td style="border:1px solid black;width:25%;"><a>{{row['description']}}</a></td>
+        <td style="border:1px solid black;width:25%;"><a>{{row['gm_weight']}}</a></td>
+            </tr>
+    {% endfor %}
+        </table>
+                 </td>
+            </tr>
+           </table>
+
+
+   </body>
+</html>
