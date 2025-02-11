@@ -54,6 +54,7 @@ To run the projects locally, follow these steps:
    ```bash
    git clone https://github.com/hebelemetu/my-ds-projects.git
 2. Navigate to the Project Directory:
+   ```bash
   cd my-ds-projects
 3.Install Dependencies: If a requirements.txt file is provided, install the necessary Python libraries:
   pip install -r requirements.txt
