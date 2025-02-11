@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+    <style type="text/css">
+        table, th, td {
+          padding: 5px;
+        }
+        a{
+         text-decoration:none;
+        }
+    </style>
+   <body style="padding:0px; margin:0px; font-family:Trebuchet MS;">
+      <div style="background-color:#4c208e; padding:20px;">
+         <table style="width:100%;">
+            <tr>
+               <td width="50%">
+                  <b style="color:white; font-size:28px; font-weight:bold;">FOOD LIST</b>
+               </td>
+               <td width="10%">
+                  <a href="/" style="color:white;font-weight:bold;">HOME</a>
+               </td>
+            </tr>
+         </table>
+
+      </div>
+      <div style="padding-left:35%;">
+         <table  style="border:none;">
+            {% for row in rows%}
+               <tr>
+                  <td>
+                     <div style="padding:10px 10px 10px 10px; background-color:purple; box-shadow: 10px 10px 10px 10px; margin:5px;">
+                        <a href="{{ url_for('urun', urunid = row['id']) }}" style="color:white; font-weight:bold;"><p>{{row['name']}}</p></a>
+                     </div>
+                  </td>
+               </tr>
+
+            {% endfor %}
+         </table>
+      </div>
+      <a href = "/">BACK HOME PAGE</a>
+   </body>
+</html>
