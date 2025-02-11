@@ -8,8 +8,6 @@ Welcome to my repository! Here you'll find a collection of my Data Science proje
 - [Projects](#projects)
 - [Technologies](#technologies)
 - [Setup & Installation](#setup--installation)
-- [Contributing](#contributing)
-- [Contact](#contact)
 
 ## Overview
 
@@ -53,22 +51,9 @@ To run the projects locally, follow these steps:
 1. **Clone the Repository:**
    ```bash
    git clone https://github.com/hebelemetu/my-ds-projects.git
-2. Navigate to the Project Directory:
+2. **Navigate to the Project Directory**:
    ```bash
-  cd my-ds-projects
-3.Install Dependencies: If a requirements.txt file is provided, install the necessary Python libraries:
+   cd my-ds-projects
+3.**Install Dependencies: If a requirements.txt file is provided, install the necessary Python libraries**:
+  ```bash
   pip install -r requirements.txt
-
-Contributing
-Contributions, suggestions, and improvements are welcome! If you have any issues or ideas, please open an issue or submit a pull request.
-
-Contact
-For any questions, collaboration opportunities, or further information, please reach out to me on LinkedIn or via email at cihatsari93@gmail.com.
-
-Thank you for visiting my repository. I hope you find my projects insightful and useful!
-
-Cihat Sari
-
----
-
-Feel free to modify this README to better suit your projects or to add more specific details as needed. Let me know if you need further adjustments!
