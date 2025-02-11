@@ -1,5 +1,3 @@
-# my-ds-projects
-Repo for my Data Science Projects
 # Cihat Sari - Data Science Projects
 
 Welcome to my repository! Here you'll find a collection of my Data Science projects, ranging from data analysis and machine learning to predictive modeling, data visualization, and web scraping.
